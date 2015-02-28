@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment: MyString
+  management: 1
+  condition: 1
+  pest: 1
+  social: 1
+
+two:
+  comment: MyString
+  management: 1
+  condition: 1
+  pest: 1
+  social: 1
