@@ -17,8 +17,23 @@ div#show-container-1{
 
 }
 
+
+div#property-container-1{
+
+/*	background-image: image-url('city2.jpg');
+	background-size: cover;*/
+	width: 100vw;
+	padding-bottom: 5vh;
+
+}
 .newc{
 	height: 250px;
+}
+
+.newc2{
+	height: 400px;
+	max-width: 50rem;
+	margin: 5vh auto;
 }
 
 .num{
@@ -42,4 +57,40 @@ img.pic{
 
 .button.postfix{
 	background-color: #9d0000;
+}
+
+div#address-title{
+	display: block;
+	color: #777;
+	font: 300 3em 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 0.15em;
+	padding-top: 3vh;
+}
+
+div#review-container{
+
+}
+
+#date{
+	color: #999;
+	font: 300 1.5em 'Open Sans', sans-serif;
+	letter-spacing: 0.05em;
+	padding-top: 3vh;
+}
+
+.comment{
+	color: #333;
+	font: 300 1em 'Open Sans', sans-serif;
+	letter-spacing: 0.05em;
+	padding-top: 1vh;
+
+}
+
+.small-12.medium-3.columns{
+	color: #333;
+	font: 300 1em 'Open Sans', sans-serif;
+	letter-spacing: 0.05em;
+	padding-top: 1vh;
 }

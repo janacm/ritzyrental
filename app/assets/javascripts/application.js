@@ -20,11 +20,15 @@ $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){ 
 
+	$(".searchbar").hide();
+
 	initialize();	
 
 	$("input#autocomplete").geocomplete();
 
 	$("#newc").css({ 'width' : $("#autocomplete").width() });
+
+	$("#newc2").css({ 'width' : $("#autocomplete").width() });
 
 	$("input#slider1").change(function(){
 		$("#numval1").text($("input#slider1").val());
@@ -44,7 +48,6 @@ $(document).ready(function(){
 
 	$(".upspace").css({ 'left' : (($(window).width() - $(".upspace").width())/2)+"px" });
 
-	$(".searchbar").hide();
 
 	$("a.square.find").click( function(){
 		$(".searchbar").slideDown(350);
@@ -54,6 +57,7 @@ $(document).ready(function(){
 		if(e.which == 13)
 			$("input.button.postfix").click();
 	});
+
 
 
 

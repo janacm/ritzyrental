@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
     @landlord = LandLord.new
 
     @landlord.address = params[:review][:address]
-    @landlord.save
+    @landlord = LandLord.find_by( address: params[:review][:address] ) unless @landlord.save
 
     respond_to do |format|
       if @review.save

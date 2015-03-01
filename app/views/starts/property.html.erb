@@ -1,1 +1,49 @@
-<%= @p %>
+<div id="property-container-1">	
+	
+	<div class="row" style="max-width: 60rem;">
+		<div id="address-title">
+			<%= @address %>
+		</div>
+
+		<div class="meter" data-temp="show"></div>
+		<div id="map-canvas" class="newc2" ></div>
+
+			<% @reviews.each do |rev| %>
+
+				<div id="review-container">
+					<div id="date"><%= rev.created_at.strftime("%B %d, %Y") %></div>
+					<div class="small-12 medium-6 columns comment" style="padding-left: 0;">
+				            	<%= rev.comment %>
+					</div>
+					<div class="small-12 medium-3 columns">
+								Health &amp; Safety
+								<div class="progress large-12 success round">
+									<span class="meter" data-health="width: <%= rev.management*20 %>%"></span>
+								</div> 
+								Appearance &amp; Cleanliness
+								<div class="progress large-12 success round">
+								<span class="meter" style="width: <%= rev.condition*20 %>%"></span></div> 
+					</div> 
+
+					<div class="small-12 medium-3 columns">
+								Recreation &amp; Amenities
+								<div class="progress large-12 success round">
+								<span class="meter" style="width: <%= rev.pest*20 %>%"></span></div> 
+								Maintenance &amp; Repair
+								<div class="progress large-12 success round">
+								<span class="meter" style="width: <%= rev.social*20 %>%"></span></div> 
+					</div>
+
+				</div>
+
+        	<% end %>
+
+	</div>
+
+
+
+</div>
+
+<input type="text" id="autocomplete" style="display: none;">
+
+
