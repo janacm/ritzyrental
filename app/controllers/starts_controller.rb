@@ -1,7 +1,7 @@
 class StartsController < ApplicationController
 
 	def home
-		@property = LandLord.new
+		@review = Review.new
 	end
 
 	def property

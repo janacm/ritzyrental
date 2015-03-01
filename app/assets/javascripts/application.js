@@ -21,8 +21,8 @@ $(function(){ $(document).foundation(); });
 $(document).ready(function(){ 
 
 	initialize();	
-	
-	$("#autocomplete").geocomplete();
+
+	$("input#autocomplete").geocomplete();
 
 	$("#newc").css({ 'width' : $("#autocomplete").width() });
 
@@ -30,6 +30,17 @@ $(document).ready(function(){
 		$("#numval1").text($("input#slider1").val());
 	});
 
+	$("input#slider2").change(function(){
+		$("#numval2").text($("input#slider2").val());
+	});
+	
+	$("input#slider3").change(function(){
+		$("#numval3").text($("input#slider3").val());
+	});
+	
+	$("input#slider4").change(function(){
+		$("#numval4").text($("input#slider4").val());
+	});
 	// $()
 	
 
@@ -38,8 +49,8 @@ $(document).ready(function(){
 
 function initialize() {
     var mapOptions = {
-      center: { lat: -34.397, lng: 150.644},
-      zoom: 10
+      center: { lat: 45, lng: -75},
+      zoom: 7
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 }
