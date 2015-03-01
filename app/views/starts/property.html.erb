@@ -17,24 +17,35 @@
 					</div>
 					<div class="small-12 medium-3 columns">
 								Health &amp; Safety
-								<div class="progress large-12 success round">
-									<span class="meter" data-health="width: <%= rev.management*20 %>%"></span>
+								<div class="progress large-12 primary round">
+									<span class="meter" style="width: <%= rev.management*20 %>%"></span>
 								</div> 
 								Appearance &amp; Cleanliness
-								<div class="progress large-12 success round">
+								<div class="progress large-12 primary round">
 								<span class="meter" style="width: <%= rev.condition*20 %>%"></span></div> 
 					</div> 
 
 					<div class="small-12 medium-3 columns">
 								Recreation &amp; Amenities
-								<div class="progress large-12 success round">
+								<div class="progress large-12 primary round">
 								<span class="meter" style="width: <%= rev.pest*20 %>%"></span></div> 
 								Maintenance &amp; Repair
-								<div class="progress large-12 success round">
+								<div class="progress large-12 primary round">
 								<span class="meter" style="width: <%= rev.social*20 %>%"></span></div> 
 					</div>
 
 				</div>
+
+        	<% end %>
+
+        	<% if @reviews.empty? %>
+
+        		<div class="norevs">
+        			There aren't any reviews yet.
+        		</div>
+				
+				<br>
+				<%= link_to 'Rate the Landlord', new_review_path, class: 'square2'%>
 
         	<% end %>
 

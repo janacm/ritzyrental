@@ -88,6 +88,41 @@ div#review-container{
 
 }
 
+.norevs{
+		color: #333;
+	font: 300 1em 'Open Sans', sans-serif;
+	letter-spacing: 0.05em;
+	padding-top: 1vh;
+	text-align: center;
+}
+
+a.square2{
+
+	font: 400 1em 'Poiret One', cursive;
+	color: #333;
+	border: 1px solid #333;
+	padding: 1em 1em;
+	letter-spacing: 0.2em;
+	width: 17vw;
+	text-align: center;
+	text-transform: uppercase;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-top: -1px;
+	box-sizing: initial;
+	-webkit-transition: background-color 0.4s;
+	-moz-transition: background-color 0.4s;
+	transition: background-color 0.4s;
+
+	&:hover{
+		cursor: pointer;
+		opacity: 0.85;
+		border: 1px solid #000;
+		color: #000;
+	}
+}
+
 .small-12.medium-3.columns{
 	color: #333;
 	font: 300 1em 'Open Sans', sans-serif;
