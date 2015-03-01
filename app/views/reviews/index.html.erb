@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th>Address</th>
+
       <th>Comment</th>
       <th>Management</th>
       <th>Condition</th>
@@ -17,6 +19,8 @@
   <tbody>
     <% @reviews.each do |review| %>
       <tr>
+        <td><%= review.address %></td>
+
         <td><%= review.comment %></td>
         <td><%= review.management %></td>
         <td><%= review.condition %></td>

@@ -47,7 +47,7 @@ $(document).ready(function(){
 	$(".searchbar").hide();
 
 	$("a.square.find").click( function(){
-		$(".searchbar").show(1000);
+		$(".searchbar").slideDown(350);
 	});
 
 	$(".search").keypress( function(e){
