@@ -31,25 +31,25 @@ $(document).ready(function(){
 	$("#newc2").css({ 'width' : $("#autocomplete").width() });
 
 	$("input#slider1").change(function(){
-		$("#numval1").text($("input#slider1").val());
+		$("#numval1").text(rate($("input#slider1").val()));
 	});
 
 	$("input#slider2").change(function(){
-		$("#numval2").text($("input#slider2").val());
+		$("#numval2").text(rate($("input#slider2").val()));
 	});
 	
 	$("input#slider3").change(function(){
-		$("#numval3").text($("input#slider3").val());
+		$("#numval3").text(rate($("input#slider3").val()));
 	});
 	
 	$("input#slider4").change(function(){
-		$("#numval4").text($("input#slider4").val());
+		$("#numval4").text(rate($("input#slider4").val()));
 	});
 
 	$(".upspace").css({ 'left' : (($(window).width() - $(".upspace").width())/2)+"px" });
 
 
-	$("a.square.find").click( function(){
+	$(".square.find").click( function(){
 		$(".searchbar").slideDown(350);
 	});
 
@@ -61,6 +61,34 @@ $(document).ready(function(){
 
 
 });
+
+function rate(n){
+
+	var str = "";
+
+	switch(n){
+		case "1":
+			str = n.concat(" - Very bad");
+			break;
+		case "2":
+			str = n.concat(" - Bad");
+			break;
+		case "3":
+			str = n.concat(" - Decent");
+			break;
+		case "4":
+			str = n.concat(" - Good");
+			break;
+		case "5":
+			str = n.concat(" - Very Good");
+			break;
+		default:
+			str = "Something is wrong!";
+	}
+
+	return str;
+
+}
 
 window.onresize = function() {
 	rescale();

@@ -48,6 +48,35 @@ a.square{
 
 }
 
+.square{
+	font: 400 1.5em 'Poiret One', cursive;
+	color: #fff;
+	border: 1px solid #fff;
+	padding: 0.5em 1em;
+	z-index: 3;
+	letter-spacing: 0.2em;
+	text-align: center;
+	position: relative;
+	text-transform: uppercase;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-top: -1px;
+	box-sizing: initial;
+	-webkit-transition: background-color 0.4s;
+	-moz-transition: background-color 0.4s;
+	transition: background-color 0.4s;
+
+	&:hover{
+		cursor: pointer;
+		opacity: 0.85;
+		background-color: #fff;
+		border: 1px solid #000;
+		color: #000;
+	}
+
+}
+
 form label{
 	font: 400 1.1em 'Open Sans', sans-serif;
 	padding-bottom: 5px;
