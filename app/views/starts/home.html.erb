@@ -1,45 +1,34 @@
 <div id="home-container-1">
 	
-	<div class="title"> <span class="r">R</span>itzy <span class="r">R</span>enter</div>
+	<div class="title">Ritzy Renter</div>
 	<br>
 
 	<%= image_tag("logonb2.png", class: "pic") %>
 
 	<div class="row" style="max-width: 70rem; margin-top: 10vh;">
 		
-  <div class="row" style="max-width: 30rem; margin: 0 auto;" >
-    <div class="large-12 columns">
-      <div class="row collapse">
-        <div class="small-10 columns">
-				<%= form_tag property_path, :method => :get do %>
-			<div class="field">
-			    <%= text_field_tag :search, params[:search], id: "autocomplete", autofocus: true %>
+	<div class="row searchbar" style="max-width: 30rem; margin: 0 auto;" >
+			<div class="large-12 columns">
+				<div class="row collapse">
+					<div class="small-10 columns">
+						<%= form_tag property_path, :method => :get do %>
+						<div class="field">
+							<%= text_field_tag :search, params[:search], id: "autocomplete", autofocus: true, class: "search" %>
+						</div>
+					</div>
+					<div class="small-2 columns" style="font-size: 1.2em;">
+						<%= submit_tag "Go", :name => nil, class: "button postfix" %>
+						<% end %> 
+					</div>
+				</div>
 			</div>
-        </div>
-        <div class="small-2 columns" style="font-size: 1.2em;">
-          		    <%= submit_tag "Go", :name => nil, class: "button postfix" %>
-			<% end %> 
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- 		<div class="small-12 columns">
-
-
-			<%= form_tag property_path, :method => :get do %>
-			<div class="field">
-			    <%= text_field_tag :search, params[:search], id: "autocomplete", autofocus: true %>
-			</div>
-			    <%= submit_tag "Search", :name => nil, class: "submit-button" %>
-			<% end %> 
-		</div> -->
+		</div>
 
 		<div class="small-12 medium-4 columns">
 			<%= link_to 'Rate a Landlord', new_review_path, class: 'square'%>
 		</div>
 		<div class="small-12 medium-4 columns">
-			<%= link_to 'Find a Landlord', '#', class: 'square'%>
+			<%= link_to 'Find a Landlord', '#', class: 'square find'%>
 		</div>
 		<div class="small-12 medium-4 columns">
 			<%= link_to 'View Map      ', '#', class: 'square'%>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root "starts#home"
 
   get "/property" => "starts#property", as: 'property'
+  get "/property/:id" => "starts#property", as: 'properties'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

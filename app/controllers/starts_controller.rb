@@ -5,6 +5,7 @@ class StartsController < ApplicationController
 	end
 
 	def property
+		@p = params[:search].nil? ? LandLord.find(params[:id]).address : params[:search]
 
 	end
 

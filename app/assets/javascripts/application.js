@@ -41,11 +41,31 @@ $(document).ready(function(){
 	$("input#slider4").change(function(){
 		$("#numval4").text($("input#slider4").val());
 	});
-	// $()
-	
+
+	$(".upspace").css({ 'left' : (($(window).width() - $(".upspace").width())/2)+"px" });
+
+	$(".searchbar").hide();
+
+	$("a.square.find").click( function(){
+		$(".searchbar").show(1000);
+	});
+
+	$(".search").keypress( function(e){
+		if(e.which == 13)
+			$("input.button.postfix").click();
+	});
+
 
 
 });
+
+window.onresize = function() {
+	rescale();
+};
+
+function rescale(){
+	$(".upspace").css({ 'left' : (($(window).width() - $(".upspace").width())/2)+"px" })
+};
 
 function initialize() {
     var mapOptions = {

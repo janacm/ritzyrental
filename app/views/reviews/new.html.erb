@@ -1,54 +1,51 @@
-<div id="new-container-1">
+<div id="new-container-1"></div>
 
-	<div class="row upspace" style="max-width: 600px; ">
-		
-		<div id="map-canvas" class="newc"></div>
-
-		<br>
-
-		<%= form_for(@review) do |f| %>
-
-		  <div class="field">
-		    <%= f.label :address, "Address"%>
-		    <%= f.text_field :address, autofocus: true, id: "autocomplete" %>
-		  </div>
-
-		  <div class="field">
-		    <%= f.label :comment, "Comment" %>
-		    <%= f.text_field :comment %>
-		  </div>
-
-		  <div class="field num">
-		    <%= f.label :management, "Health & Safety" %>
-		    <%= f.range_field :management, min: 1, max: 5, id: "slider1" %>
-		  </div>
-  		  <span class="numval" id="numval1">3</span>
-
-		  <div class="field num">
-		    <%= f.label :condition, "Appearance & Cleanliness" %>
-		    <%= f.range_field :condition, min: 1, max: 5, id: "slider2" %>
-		  </div>
-		  <span class="numval" id="numval2">3</span>
-
-		  <div class="field num">
-		    <%= f.label :pest, "Recreation & Amenities" %>
-		    <%= f.range_field :pest, min: 1, max: 5, id: "slider3" %>
-		  </div>	
-		  <span class="numval" id="numval3">3</span>
-
-		  <div class="field num">
-		    <%= f.label :social, "Maintenance & Repair" %>
-		    <%= f.range_field :social, min: 1, max: 5, id: "slider4" %>
-		  </div>
-		  <span class="numval" id="numval4">3</span>
-
-		  <br><br>
-		  <div class="actions">
-		    <%= f.submit "Rate Your LandLord", class: 'signup' %>
-		  </div>
-		<% end %>
-	</div>
+<div class="row upspace" style="max-width: 600px; ">
 	
-</div>
+	<div id="map-canvas" class="newc"></div>
 
+	<br>
+
+	<%= form_for(@review) do |f| %>
+
+	<div class="field">
+		<%= f.label :address, "Address"%>
+		<%= f.text_field :address, autofocus: true, id: "autocomplete" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :comment, "Comment" %>
+		<%= f.text_area :comment %>
+	</div>
+
+	<div class="field num">
+		<%= f.label :management, "Health & Safety" %>
+		<%= f.range_field :management, min: 1, max: 5, id: "slider1" %>
+	</div>
+	<span class="numval" id="numval1">3</span>
+
+	<div class="field num">
+		<%= f.label :condition, "Appearance & Cleanliness" %>
+		<%= f.range_field :condition, min: 1, max: 5, id: "slider2" %>
+	</div>
+	<span class="numval" id="numval2">3</span>
+
+	<div class="field num">
+		<%= f.label :pest, "Recreation & Amenities" %>
+		<%= f.range_field :pest, min: 1, max: 5, id: "slider3" %>
+	</div>	
+	<span class="numval" id="numval3">3</span>
+
+	<div class="field num">
+		<%= f.label :social, "Maintenance & Repair" %>
+		<%= f.range_field :social, min: 1, max: 5, id: "slider4" %>
+	</div>
+	<span class="numval" id="numval4">3</span>
+
+	<br><br>
+	<div class="actions">
+		<%= f.submit "Rate Your LandLord", class: 'signup' %>
+	</div>
+	<% end %>
+</div>
 
