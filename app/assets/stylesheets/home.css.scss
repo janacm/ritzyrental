@@ -58,6 +58,7 @@ form label{
 form .field input{
 	font: 400 1.1em 'Open Sans', sans-serif;
 	color: #777;
+	display: inline-block;
 }
 
 
@@ -67,7 +68,10 @@ form .field textarea{
 }
 
 .upspace{
-	padding-top: 10vh;
+	padding: 2vh;
+	height: 100%;
+	background-color: #fff;
+
 }
 
 input.signup{
@@ -85,3 +89,4 @@ input.signup{
 		color: #eee !important;
 	}
 }
+

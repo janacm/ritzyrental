@@ -1,0 +1,35 @@
+div#new-container-1{
+
+	background-image: image-url('city4.jpg');
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+
+
+}
+
+div#show-container-1{
+
+	background-image: image-url('city2.jpg');
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+
+}
+
+.newc{
+	height: 250px;
+}
+
+.num{
+	width: 20%;
+	margin: 0;
+	display: inline; /* for displaying value beside slider */
+}
+
+.numval{
+	font: 400 1.5em 'Open Sans', sans-serif;
+	color: #999;
+	margin-left: 2vw;
+
+}

@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div id="show-container-1">
+  <div class="header">
+    
+  </div>
+  <p>
+    <strong>Comment:</strong>
+    <%= @review.comment %>
+  </p>
 
-<p>
-  <strong>Comment:</strong>
-  <%= @review.comment %>
-</p>
+  <p>
+    <strong>Management:</strong>
+    <%= @review.management %>
+  </p>
 
-<p>
-  <strong>Management:</strong>
-  <%= @review.management %>
-</p>
+  <p>
+    <strong>Condition:</strong>
+    <%= @review.condition %>
+  </p>
 
-<p>
-  <strong>Condition:</strong>
-  <%= @review.condition %>
-</p>
+  <p>
+    <strong>Pest:</strong>
+    <%= @review.pest %>
+  </p>
 
-<p>
-  <strong>Pest:</strong>
-  <%= @review.pest %>
-</p>
+  <p>
+    <strong>Social:</strong>
+    <%= @review.social %>
+  </p>
+  <!-- 
+  <%= link_to 'Edit', edit_review_path(@review) %> |
+  <%= link_to 'Back', reviews_path %> -->
 
-<p>
-  <strong>Social:</strong>
-  <%= @review.social %>
-</p>
-
-<%= link_to 'Edit', edit_review_path(@review) %> |
-<%= link_to 'Back', reviews_path %>
+</div>

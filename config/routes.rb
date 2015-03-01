@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root "starts#home"
 
+  get "/property" => "starts#property", as: 'property'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

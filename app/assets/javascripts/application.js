@@ -20,6 +20,26 @@ $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){ 
 
+	initialize();	
+	
 	$("#autocomplete").geocomplete();
 
+	$("#newc").css({ 'width' : $("#autocomplete").width() });
+
+	$("input#slider1").change(function(){
+		$("#numval1").text($("input#slider1").val());
+	});
+
+	// $()
+	
+
+
 });
+
+function initialize() {
+    var mapOptions = {
+      center: { lat: -34.397, lng: 150.644},
+      zoom: 10
+    };
+    var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+}
