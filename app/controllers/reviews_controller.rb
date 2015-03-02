@@ -68,6 +68,13 @@ class ReviewsController < ApplicationController
   end
 
   private
+
+
+   def set_access_control_headers
+     headers['Access-Control-Allow-Origin'] = "*"
+     headers['Access-Control-Request-Method'] = %w{GET POST OPTIONS}.join(",")
+   end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_review
       @review = Review.find(params[:id])
