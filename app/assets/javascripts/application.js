@@ -20,15 +20,18 @@ $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){ 
 
-	$(".searchbar").hide();
+if($("input#autocomplete").length != 0){
 
 	initialize();	
-
 	$("input#autocomplete").geocomplete();
-
 	$("#newc").css({ 'width' : $("#autocomplete").width() });
-
 	$("#newc2").css({ 'width' : $("#autocomplete").width() });
+
+}
+
+
+	$(".searchbar").hide();
+
 
 	$("input#slider1").change(function(){
 		$("#numval1").text(rate($("input#slider1").val()));
@@ -57,6 +60,24 @@ $(document).ready(function(){
 		if(e.which == 13)
 			$("input.button.postfix").click();
 	});
+
+
+
+	$.ajax({
+    
+        url: "http://www.ritzyrenter.co/reviews.json",
+        dataType: "json", 
+        cache: false,
+        success: function (data) {
+
+		console.log(data);
+
+
+		}
+	});
+
+
+
 
 
 });
