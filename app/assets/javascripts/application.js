@@ -34,15 +34,7 @@ if($("input#autocomplete").length != 0){
 
 	// alert(window.location.pathname);
 
-	// var stri = $.urlParam('search');
 
-	// if(stri.length > 0){
-		
-	// var loc = decodeURIComponent($.urlParam('search')).replaceAll('+', ' ');
-
-	// 	codeAddress(loc);
-
-	// }
 
 	$(".searchbar").hide();
 
@@ -90,7 +82,15 @@ if($("input#autocomplete").length != 0){
 		}
 	});
 
+	var stri = $.urlParam('search');
 
+	if(stri.length > 0){
+		
+	var loc = decodeURIComponent($.urlParam('search')).replaceAll('+', ' ');
+
+		codeAddress(loc);
+
+	}
 
 
 
@@ -144,11 +144,11 @@ function initialize(position) {
 
 	var pos;
 
-	// if( latitudeG != "" ){
- //    	pos = { lat: latitudeG, lng: longitudeG };
- //    }else{
+	if( latitudeG != "" ){
+    	pos = { lat: latitudeG, lng: longitudeG };
+    }else{
     	pos = { lat: position.coords.latitude, lng: position.coords.longitude };
-    // }
+    }
 
     var mapOptions = {
       center: pos,
