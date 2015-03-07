@@ -7,7 +7,6 @@ class StartsController < ApplicationController
 	def property
 
 		@address = params[:search].nil? ? LandLord.find(params[:id]).address : params[:search]
-
 		@reviews = LandLord.first.reviewlist @address
 
 	end

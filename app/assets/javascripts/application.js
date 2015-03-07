@@ -16,19 +16,33 @@
 //= require turbolinks
 //= require_tree .
 
+var latitudeG = "";
+var longitudeG = "";
+
 $(function(){ $(document).foundation(); });
 
 $(document).ready(function(){ 
 
 if($("input#autocomplete").length != 0){
 
-	initialize();	
+	getLocation();	
 	$("input#autocomplete").geocomplete();
 	$("#newc").css({ 'width' : $("#autocomplete").width() });
 	$("#newc2").css({ 'width' : $("#autocomplete").width() });
 
 }
 
+	// alert(window.location.pathname);
+
+	// var stri = $.urlParam('search');
+
+	// if(stri.length > 0){
+		
+	// var loc = decodeURIComponent($.urlParam('search')).replaceAll('+', ' ');
+
+	// 	codeAddress(loc);
+
+	// }
 
 	$(".searchbar").hide();
 
@@ -82,6 +96,14 @@ if($("input#autocomplete").length != 0){
 
 });
 
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(initialize);
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+}
+
 function rate(n){
 
 	var str = "";
@@ -118,10 +140,58 @@ function rescale(){
 	$(".upspace").css({ 'left' : (($(window).width() - $(".upspace").width())/2)+"px" })
 };
 
-function initialize() {
+function initialize(position) {
+
+	var pos;
+
+	// if( latitudeG != "" ){
+ //    	pos = { lat: latitudeG, lng: longitudeG };
+ //    }else{
+    	pos = { lat: position.coords.latitude, lng: position.coords.longitude };
+    // }
+
     var mapOptions = {
-      center: { lat: 45, lng: -75},
-      zoom: 7
+      center: pos,
+      zoom: 16
     };
+
     var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+
+	var marker = new google.maps.Marker({
+		position: pos,
+	});
+
+	marker.setMap(map);
 }
+
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return results[1] || 0;
+    }
+}
+
+String.prototype.replaceAll = function(search, replace)
+{
+    //if replace is null, return original string otherwise it will
+    //replace search string with 'undefined'.
+    if(!replace) 
+        return this;
+
+    return this.replace(new RegExp('[' + search + ']', 'g'), replace);
+};
+
+
+function codeAddress(address) {
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+
+	      latitudeG =  results[0].geometry.location.lat();
+	      longitudeG = results[0].geometry.location.lng();
+      } 
+    });
+  }
